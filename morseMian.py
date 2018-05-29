@@ -204,51 +204,13 @@ def morseDecode(morse):
 
 
 # 主程序
-# filepath = "./"  # 添加路径
-# sampleRate = 20
-# filename = getFileName(filepath, '.wav')
-# for name in filename:
-#     wav = wave.open(filepath + name, 'rb')
-#     params = wav.getparams()
-#     nchannels, sampwidth, Fs, nframes = params[:4]
-#     strData = wav.readframes(nframes)  # 读取音频，字符串格式
-#     waveData = np.fromstring(strData, dtype=np.int16)  # 将字符串转化为int
-#     waveData = waveData * 1.0 / (max(abs(waveData)))  # wave幅值归一化
-#     # 对信号进行压缩
-#     compressWaveData = getMeanByTime(waveData, sampleRate, params)
-#
-#     # plot the wave
-#     time = np.arange(0, nframes) * (1.0 / Fs)
-#     plt.figure()
-#     plt.subplot(2, 1, 1)
-#     plt.plot(time, waveData)
-#     plt.xlabel("Time(s)")
-#     plt.ylabel("Amplitude")
-#     plt.title("Single channel wavedata")
-#     plt.grid('on')  # 标尺，on：有，off:无。
-#     plt.subplot(2, 1, 2)
-#     time_c = np.arange(0, len(compressWaveData)) * (1.0 / Fs) * (Fs * sampleRate / 1000)
-#     plt.plot(time_c, compressWaveData)
-#     plt.xlabel("Time(s)")
-#     plt.ylabel("Amplitude")
-#     plt.title("Compress channel wavedata")
-#     decode, morse = getMorse(compressWaveData, 2, 3)
-#     plt.grid('on')  # 标尺，on：有，off:无。
-#     print(morse)
-#     str_res = morseDecode(decode)
-#     print(str_res)
-#     plt.show()
-
 # mp3
 
-filepath = "./"  # 添加路径
-filename = getFileName(filepath, '.mp3')
-
-print("read " + filename[1])
-
-filepath = "./"  # 添加路径
+# 添加路径
+filepath = "./"
 # 压缩时间
 sampleRate = 20
+
 filename = getFileName(filepath, '.wav')
 for name in filename:
     mp3 = AudioSegment.from_mp3(filepath + name)
